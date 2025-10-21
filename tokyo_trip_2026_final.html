@@ -15,10 +15,11 @@
     --accent:#e85a4f;        /* 主色（珊瑚紅 / 紅橘） */
     --accent-2:#ff6f50;
     --muted:#6b6b6b;
-    --bg:#ffffff;           /* 灰白純色封面需求 */
+    --blue-accent:#4a8bbd;
+    --bg:#ffffff;
     --card:#ffffff;
     --shadow: 0 10px 30px rgba(0,0,0,0.08);
-    --maxw:880px;           /* 桌機寬度調整為 880px */
+    --maxw:880px;
     --glass: rgba(255,255,255,0.98);
     --radius:12px;
     --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
@@ -29,7 +30,7 @@
   body{
     margin:0;
     font-family:var(--font-sans);
-    background:linear-gradient(180deg,#f9f9f9,#f3f3f4); /* 灰白純色漸層（非常 subtle） */
+    background:linear-gradient(180deg,#f9f9f9,#f3f3f4);
     color:#222;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
@@ -40,7 +41,7 @@
   a{color:var(--accent);text-decoration:none;}
   img{max-width:100%;height:auto;display:block;}
 
-  /* ---------- Container ---------- */
+/* ---------- Container ---------- */
   .wrap{
     width:100%;
     max-width:var(--maxw);
@@ -53,81 +54,82 @@
     border:1px solid rgba(0,0,0,0.04);
   }
 
-  /* ---------- Typography hierarchy ---------- */
+/* ---------- Typography hierarchy ---------- */
   h1{font-size:1.9rem;margin:0;color:#111;line-height:1.02;font-weight:900;letter-spacing:-0.02em;}
   h2{font-size:1.05rem;margin:0;color:var(--accent);font-weight:900;}
   h3{font-size:0.98rem;margin:0;color:#333;font-weight:800;}
   p{margin:8px 0;color:#222;line-height:var(--line);font-size:0.98rem;}
   small, .note{font-size:0.88rem;color:var(--muted);line-height:1.4;}
-
-  /* smaller adjustments for lists inside cards */
   ul{margin:6px 0 0 18px;color:#333;line-height:1.5;}
 
-  /* ---------- Cover / Hero ---------- */
-  .cover{
-    display:flex;
-    gap:16px;
-    align-items:center;
-    margin-bottom:12px;
-    flex-wrap:wrap;
-  }
+/* ---------- Cover / Hero ---------- */
+  .cover{display:flex;gap:16px;align-items:center;margin-bottom:12px;flex-wrap:wrap;}
   .cover-left{flex:1 1 420px;}
   .cover-right{width:220px;min-width:180px;text-align:right;}
   .title-main{font-weight:900;}
   .title-sub{margin-top:6px;color:var(--muted);font-size:0.98rem;}
 
   .hero{
-    margin:0 0 8px 0;
-    border-radius:12px;
-    overflow:hidden;
-    position:relative;
-    min-height:140px;
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    color:#222;
-    background:linear-gradient(180deg,#fbfbfb,#f4f4f5); /* 灰白乾淨 */
-    border:1px solid rgba(0,0,0,0.02);
-    padding:18px;
+    margin:0 0 8px 0;border-radius:12px;overflow:hidden;position:relative;min-height:140px;display:flex;align-items:center;justify-content:flex-start;color:#222;background:linear-gradient(180deg,#fbfbfb,#f4f4f5);border:1px solid rgba(0,0,0,0.02);padding:18px;
   }
   .hero .inner{position:relative;z-index:2;width:100%;}
   .hero p.lead{margin:6px 0 0 0;color:var(--muted);font-weight:700;}
+  .hero-sign{position:absolute;right:14px;bottom:10px;font-size:0.82rem;color:var(--muted);font-weight:700;opacity:0.9;}
 
-  .hero-sign{
-    position:absolute;right:14px;bottom:10px;font-size:0.82rem;color:var(--muted);font-weight:700;opacity:0.9;
-  }
-
-  /* ---------- Route maps (cards) ---------- */
-  .maps{
-    display:flex;
-    gap:12px;
-    margin:14px 0 8px;
-    align-items:stretch;
-    flex-wrap:wrap;
-  }
+/* ---------- Route maps (cards) - replaced & unified ---------- */
+  .maps{display:flex;gap:12px;margin:14px 0 8px;align-items:stretch;flex-wrap:wrap;}
   .map-card{
     background:#fff;border-radius:12px;padding:12px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 6px 18px rgba(0,0,0,0.04);
-    display:flex;gap:12px;align-items:center;flex:1 1 360px;
+    display:flex;gap:12px;align-items:center;flex:1 1 360px;text-decoration:none;color:inherit;transition:transform .14s,box-shadow .14s;
   }
-  .map-card .thumb{width:88px;height:64px;flex:0 0 88px;background:#f4f4f4;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700;font-size:0.8rem;border:1px dashed rgba(0,0,0,0.03);}
+  .map-card:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(0,0,0,0.08);}
+  .map-card .thumb{
+	width: 88px;
+	height: 64px;
+	flex: 0 0 88px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--blue-accent);
+	font-weight: 800;
+	font-size: 1.02rem;
+	border: 1px dashed rgba(0,0,0,0.03);
+	background: linear-gradient(180deg,#fff,#f6fbff);
+}
   .map-card .meta{flex:1;}
   .map-card .meta .t{font-weight:800;color:#222;font-size:0.95rem;}
-  .map-card .meta small{display:block;margin-top:6px;color:var(--muted);}
+  .map-card .meta small{display:block;margin-top:6px;color:var(--muted);font-size:0.88rem;}
 
-  /* ---------- Nav ---------- */
+/* ---------- Nav ---------- */
   nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
   nav a{background:#fff;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--accent);border:1px solid #fff2f0;font-weight:800;font-size:0.92rem;box-shadow:0 4px 12px rgba(232,90,79,0.04);}
 
-  .overview{margin-top:6px;background:linear-gradient(90deg,#fffaff,#fffaf5);border-left:6px solid var(--accent-2);padding:12px;border-radius:10px;font-size:0.95rem;color:#222;}
+/* ---------- Overview (replaced) ---------- */
+  .overview{
+	margin-top: 6px;
+	background: rgb(255 255 255);
+	padding: 10px 12px;
+	border-radius: 10px;
+	font-size: 0.92rem;
+	color: #222;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	border-left: 4px solid rgba(217, 75, 43, 0.06);
+	flex-wrap: wrap;
+  }
+  .overview .label{font-weight:800;color:var(--accent);min-width:84px;}
+  .overview .list{font-size:0.92rem;color:#222222;line-height:1.38;display:flex;flex-direction:column;gap:6px;}
 
-  /* ---------- Day card ---------- */
+/* ---------- Day card ---------- */
   section.day{margin-top:40px;padding-top:6px;border-top:1px dashed rgba(0,0,0,0.04);}
   .day-header{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;}
   .day-title{background:var(--card);padding:12px 14px;border-radius:10px;border-left:6px solid var(--accent);box-shadow: 0 6px 18px rgba(0,0,0,0.04);display:flex;flex-direction:column;}
   .day-title h2{font-size:1.02rem;}
   .day-title p{margin-top:6px;color:var(--muted);font-size:0.92rem;font-weight:700;}
 
-  /* ---------- Time axis ---------- */
+/* ---------- Time axis ---------- */
   .time-axis{margin-top:12px;}
   .time-row{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:start;margin-top:12px;}
   .time-row .t{color:var(--accent);font-weight:900;background:linear-gradient(180deg,#fff,#fff7f7);padding:10px;border-radius:10px;text-align:center;font-size:0.96rem;}
@@ -136,21 +138,20 @@
   .c p{margin:6px 0;color:#333;line-height:1.6;}
   .small{font-size:0.9rem;color:var(--muted);}
 
-  /* ---------- Map / Button ---------- */
+/* ---------- Map / Button ---------- */
   .btn{display:inline-block;margin-left:6px;padding:8px 12px;background:#fff;color:var(--accent);text-decoration:none;border-radius:10px;font-size:0.92rem;border:1px solid rgba(128,0,0,0.04);box-shadow:0 6px 12px rgba(128,0,0,0.04);transition:transform .16s,box-shadow .16s;}
   .btn:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(128,0,0,0.08);background:var(--accent);color:#fff;border-color:transparent;}
 
-  /* ---------- References / Links ---------- */
+/* ---------- References / Links ---------- */
   .refs{margin-top:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
   .refs .ref{background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,0.03);position:relative;overflow:hidden;}
   .refs .ref a{color:var(--accent);text-decoration:none;font-weight:800;}
   .refs .ref small{display:block;color:var(--muted);margin-top:6px;font-weight:500;}
-
   .links-list{display:flex;flex-direction:column;gap:8px;margin-top:10px;}
   .links-list a{display:block;padding:10px;border-radius:8px;background:#fff;border-left:4px solid #ffecec;text-decoration:none;color:#222;font-weight:800;}
   .links-list small{display:block;color:var(--muted);margin-top:6px;font-weight:500;}
 
-  /* ---------- YouTube cards (16:9 thumbs) ---------- */
+/* ---------- YouTube cards (16:9 thumbs) ---------- */
   .yt-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;align-items:flex-start;padding-bottom:8px;}
   .yt-card{
     background:#fafafa;border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.05);
@@ -161,41 +162,29 @@
     position:relative;
   }
   .yt-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 38px rgba(0,0,0,0.12);}
-  /* modern 16:9 thumbnails */
   .yt-thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#ddd;}
   .yt-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .28s;}
   .yt-card:hover .yt-thumb img{transform:scale(1.06);}
   .yt-meta{padding:12px;font-size:0.95rem;}
   .yt-meta .t{font-weight:900;color:#222;margin-bottom:6px;display:block;font-size:0.96rem;line-height:1.2;}
   .yt-meta .d{font-size:0.86rem;color:var(--muted);line-height:1.3;}
-
   .play-overlay{position:absolute;right:10px;top:10px;background:rgba(0,0,0,0.45);color:#fff;padding:6px 8px;border-radius:999px;font-weight:800;font-size:0.95rem;}
 
-  /* ---------- Aside & Footer ---------- */
+/* ---------- Aside (replaced) ---------- */
   .aside{margin-top:18px;background:linear-gradient(180deg,#fff,#fff);padding:16px;border-radius:10px;border-left:6px solid #4a7fa6;box-shadow:0 6px 16px rgba(0,0,0,0.03);}
-  footer{margin-top:18px;color:var(--muted);font-size:0.9rem;text-align:center;padding:12px 0;}
+  .aside-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .aside .h{font-weight:800;color:var(--accent);margin-bottom:6px;}
+  .transport ul{margin:0 0 0 18px;}
+  .accommodation p{margin:0;color:#111;}
 
-  /* ---------- Back to top button ---------- */
+/* ---------- Footer & Back to top ---------- */
+  footer{margin-top:18px;color:var(--muted);font-size:0.9rem;text-align:center;padding:12px 0;}
   .backtop{
-    position:fixed;
-    right:18px;
-    bottom:22px;
-    background:linear-gradient(180deg,var(--accent),var(--accent-2));
-    color:#fff;
-    border-radius:999px;
-    padding:10px 12px;
-    box-shadow:0 10px 30px rgba(232,90,79,0.18);
-    font-weight:900;
-    border:0;
-    cursor:pointer;
-    z-index:9999;
-    display:flex;
-    gap:8px;
-    align-items:center;
+    position:fixed;right:18px;bottom:22px;background:linear-gradient(180deg,var(--accent),var(--accent-2));color:#fff;border-radius:999px;padding:10px 12px;box-shadow:0 10px 30px rgba(232,90,79,0.18);font-weight:900;border:0;cursor:pointer;z-index:9999;display:flex;gap:8px;align-items:center;
   }
   .backtop:focus{outline:3px solid rgba(232,90,79,0.14);}
 
-  /* ---------- Responsive tweaks ---------- */
+/* ---------- Responsive tweaks ---------- */
   @media (max-width:980px){
     :root{ --maxw:92vw; }
     .refs{grid-template-columns:1fr;}
@@ -203,6 +192,7 @@
     .hero{min-height:120px;}
     .yt-card{flex:1 1 calc(50% - 12px);max-width:46%;}
     .map-card{flex:1 1 48%;}
+    .overview{gap:10px;}
   }
   @media (max-width:720px){
     body{padding:12px;}
@@ -215,6 +205,8 @@
     .map-card{flex-basis:100%;}
     .wrap{padding:14px;}
     p{font-size:0.95rem;line-height:1.7;}
+    .aside-grid{grid-template-columns:1fr;}
+    .overview{flex-direction:column;align-items:flex-start;}
   }
 </style>
 </head>
@@ -239,19 +231,33 @@
       </div>
     </div>
 
-    <!-- ROUTE MAPS (JR / Metro) -->
-    <div class="maps" aria-label="路線圖參考">
+    <!-- ROUTE MAPS (JR / Metro) - replaced content using your svg icons -->
+        <div class="maps" aria-label="路線圖參考">
       <a class="map-card" href="https://www.jreast.co.jp/tc/info/map_a4ol.pdf" target="_blank" rel="noopener noreferrer" title="JR東日本路線圖（PDF）">
-        <div class="thumb" aria-hidden="true">JR</div>
+        <div class="thumb" aria-hidden="true">
+          <!-- JR SVG icon (text slightly larger) -->
+          <svg width="54" height="36" viewBox="0 0 54 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" focusable="false">
+            <rect rx="6" width="54" height="36" fill="#fff"></rect>
+            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="14" font-weight="900" fill="#4a8bbd" font-family="Arial, Helvetica, sans-serif">JR</text>
+          </svg>
+        </div>
         <div class="meta">
           <div class="t">JR東日本路線圖</div>
+          <small>PDF — 建議下載於手機離線查看。</small>
         </div>
       </a>
 
       <a class="map-card" href="https://www.tokyometro.jp/station/pdf/202305/202305_number_tcn.pdf" target="_blank" rel="noopener noreferrer" title="東京 Metro 地鐵路線圖（PDF）">
-        <div class="thumb" aria-hidden="true">Metro</div>
+        <div class="thumb" aria-hidden="true">
+          <!-- Metro SVG icon (text slightly larger) -->
+          <svg width="54" height="36" viewBox="0 0 54 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" focusable="false">
+            <rect rx="6" width="54" height="36" fill="#fff"></rect>
+            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="12.5" font-weight="900" fill="#4a8bbd" font-family="Arial, Helvetica, sans-serif">Metro</text>
+          </svg>
+        </div>
         <div class="meta">
-          <div class="t">東京 Metro 地鐵路線圖</div>
+          <div class="t">東京 Metro 路線圖</div>
+          <small>車站編號與轉乘提示。</small>
         </div>
       </a>
     </div>
@@ -265,9 +271,16 @@
       <a href="#day5">Day5｜01/24</a>
     </nav>
 
+    <!-- OVERVIEW (replaced block) -->
     <div class="overview" role="region" aria-label="快速概覽">
-      <strong>快速概覽（主題）</strong><br>
-      Day1：抵達・錦糸町夜散 — Day2：鎌倉（歷史）→ 橫濱（港灣）→ 川崎（夜景） — Day3：銀座（精品 & 水族）→ 東京車站一番街 → 表參道/原宿 → 澀谷 — Day4：吉祥寺 → 下北澤 → 新宿（文青 & 夜生活） — Day5：阿美橫丁 → 晴空塔 → 錦糸町購物 → 前往成田。
+      <div class="label">快速概覽</div>
+      <div class="list" aria-hidden="false">
+        <span><strong>Day1：</strong>抵達 · 錦糸町夜散</span>
+        <span><strong>Day2：</strong>鎌倉（歷史） → 橫濱（港灣） → 川崎（夜景）</span>
+        <span><strong>Day3：</strong>銀座（精品 &amp; 水族） → 東京車站一番街 → 表參道/原宿 → 澀谷</span>
+        <span><strong>Day4：</strong>吉祥寺 → 下北澤 → 新宿（文青 &amp; 夜生活）</span>
+        <span><strong>Day5：</strong>阿美橫丁 → 晴空塔 → 錦糸町購物 → 前往成田</span>
+      </div>
     </div>
 
     <!-- DAY1 -->
@@ -340,10 +353,10 @@
             <div class="title">從錦糸町出發 → 前往鎌倉（交通建議）</div>
             <p class="small">推薦路線（方便、轉乘少）：</p>
             <ul>
-              <li><strong>錦糸町 → JR 線（總武快速 / Sobu Rapid）→ 東京（或品川）→ 轉乘JR橫須賀線/湘南新宿ライン→ 鎌倉</strong>：通常需在東京或品川轉乘橫須賀線；從錦糸町直達鎌倉並無單一路線，故建議以東京或品川轉乘為主（轉車一次）。</li>
+              <li><strong>錦糸町 → JR 線（總武快速 / Sobu Rapid）→ 東京（或品川）→ 轉乘JR橫須賀線/湘南新宿ライン→ 鎌倉</strong>：通常需在東京或品川轉乘橫須賀線。</li>
               <li><strong>替代：錦糸町 → 地下鐵/都營轉乘至新宿/品川 → 乘橫須賀線直達鎌倉</strong>：視路線與時刻表選擇，轉乘次數相近。</li>
             </ul>
-            <p class="small" style="margin-top:8px;">車程總時間約 60–90 分鐘（視轉乘與列車類型）。若想省時，可提早查好轉乘站（東京或品川）與橫須賀線時刻。</p>
+            <p class="small" style="margin-top:8px;">車程總時間約 60–90 分鐘（視轉乘與列車類型）。</p>
           </div>
         </div>
 
@@ -351,8 +364,8 @@
           <div class="t">10:15–12:30</div>
           <div class="c">
             <div class="title">鎌倉 小町通（Komachi-dori）＋鶴岡八幡宮</div>
-            <p>小町通吃街、伴手禮與老店多，推薦試蒟蒻、和菓子與大佛燒。鶴岡八幡宮散步與參拜拍照（短程即可）。若時間允許或想走海邊，可以將江之島列為備用行程。</p>
-            <p class="small">建議出口/站口：鎌倉站 東口 → 步行至小町通入口（北口/東口方向）。</p>
+            <p>小町通吃街、伴手禮與老店多，推薦試蒟蒻、和菓子與大佛燒。鶴岡八幡宮散步與參拜拍照（短程即可）。</p>
+            <p class="small">建議出口/站口：鎌倉站 東口 → 步行至小町通入口。</p>
           </div>
         </div>
 
@@ -699,22 +712,23 @@
       </div>
     </section>
 
-    <!-- TRANSPORT & NOTES -->
+    <!-- TRANSPORT & NOTES (aside replaced & spacing unified) -->
     <div class="aside" aria-labelledby="asideTitle">
-      <div id="asideTitle" style="font-weight:900;color:#2b5b6f;margin-bottom:8px;">交通建議 & 住宿說明</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-        <div>
-          <div style="font-weight:800;color:var(--accent);margin-bottom:6px;">交通建議</div>
+      <div id="asideTitle" style="font-weight:900;color:#2b5b6f;margin-bottom:8px;">交通建議 &amp; 住宿說明</div>
+      <div class="aside-grid">
+        <div class="transport" aria-label="交通建議">
+          <div class="h">交通建議</div>
           <ul>
             <li>建議攜帶 Suica / PASMO：市內搭乘與小額消費皆方便。</li>
             <li>若行程多跨城（如鎌倉/橫濱/川崎），可評估購買一日券或使用 JR 東日本的短程票券。</li>
             <li>從錦糸町往成田建議預留 90–150 分鐘；視交通方式（Narita Express / 機場巴士 / 利木津）調整。</li>
-            <li>前往鎌倉之建議：錦糸町 → JR（總武快速/Sobu Rapid）→ 東京/品川 → 轉乘JR橫須賀線直達鎌倉（通常需在東京或品川轉乘一次）。</li>
+            <li>前往鎌倉之建議：錦糸町 → JR（總武快速 / Sobu Rapid）→ 東京/品川 → 轉乘 JR 橫須賀線直達鎌倉（通常需在東京或品川轉乘一次）。</li>
           </ul>
         </div>
-        <div>
+
+        <div class="accommodation" aria-label="住宿說明">
           <div style="font-weight:800;color:var(--accent);margin-bottom:6px;">住宿（據點）</div>
-          <p style="margin:0;color:#333;">
+          <p style="margin:0;color:#111;">
             Tobu Hotel Levant Tokyo（錦糸町）交通方便、靠近地鐵與 JR，適合以東京市區為基地。若想早出發鎌倉，建議預留轉乘時間並避開早高峰。
           </p>
         </div>
