@@ -8,7 +8,9 @@
 <meta name="theme-color" content="#e85a4f" />
 
 <style>
-  /* ---------- 1. 基礎設定 (Base) ---------- */
+  /* =========================================
+     1. 網頁版基礎設定 (Web Screen Styles)
+     ========================================= */
   :root {
     --accent: #e85a4f;       /* 主色：珊瑚紅 */
     --accent-bg: #fff5f5;
@@ -39,7 +41,7 @@
   a { color: var(--accent); text-decoration: none; font-weight: 700; transition: color 0.2s; }
   img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
 
-  /* ---------- 2. 外框容器 (Container) ---------- */
+  /* ---------- 外框容器 ---------- */
   .wrap {
     width: 100%;
     max-width: var(--max-w);
@@ -52,8 +54,7 @@
     position: relative;
   }
 
-  /* ---------- 3. 排版與 Hero 封面區塊 (Typography & Hero) ---------- */
-  /* 置中封面風格 */
+  /* ---------- 封面區塊 (Hero) ---------- */
   .hero-box {
     background: #fff;
     padding: 30px 20px;
@@ -94,20 +95,7 @@
   li { margin-bottom: 6px; }
   small, .small { font-size: 0.85rem; color: var(--text-muted); display: block; line-height: 1.4; }
   
-  /* 標籤樣式 (雖然移除了內容，CSS保留以免未來要用) */
-  .tag {
-    display: inline-block;
-    background: var(--accent-bg);
-    color: var(--accent);
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 800;
-    margin-bottom: 12px;
-    border: 1px solid rgba(232,90,79,0.1);
-  }
-
-  /* ---------- 4. 導航與地圖 (Nav & Maps) ---------- */
+  /* ---------- 導航與地圖 ---------- */
   .maps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -139,7 +127,7 @@
   .nav-bar {
     display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;
     position: sticky; top: 10px; z-index: 99;
-    justify-content: center; /* 導覽列置中 */
+    justify-content: center;
   }
   .nav-btn {
     background: rgba(255,255,255,0.95);
@@ -172,7 +160,7 @@
   .overview-row { display: flex; margin-bottom: 6px; font-size: 0.9rem; }
   .overview-row strong { min-width: 60px; color: var(--accent); }
 
-  /* ---------- 5. 日程區塊 (Day Section) ---------- */
+  /* ---------- 日程區塊 (Day Section) ---------- */
   section.day {
     scroll-margin-top: 60px;
     margin-bottom: 50px;
@@ -180,19 +168,17 @@
     padding-top: 30px;
   }
   
-  /* 日程標題卡片 */
+  /* Day Header - 陰影顏色為灰色 */
   .day-header {
-	background: linear-gradient(135deg, var(--accent), #ff7e5f);
-	border-radius: 12px;
-	padding: 15px;
-	margin-bottom: 20px;
-	box-shadow: 0 8px 20px rgba(167,167,167,0.20);
-	color: white;
-	-webkit-box-shadow: 0 8px 20px rgba(167,167,167,0.20);
+    background: linear-gradient(135deg, var(--accent), #ff7e5f);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(167, 167, 167, 0.20);
+    color: white;
   }
   .day-header p { color: rgba(255,255,255,0.95); margin: 4px 0 0 0; font-size: 0.9rem; }
   
-  /* 地圖按鈕群組 */
   .map-buttons { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
   .btn-map {
     display: inline-flex; align-items: center;
@@ -205,25 +191,25 @@
   }
   .btn-map:hover { background: var(--accent); color: white; border-color: var(--accent); transform: translateY(-2px); }
 
-  /* ---------- 6. 時間軸 (Timeline Grid) ---------- */
+  /* ---------- 時間軸 (Timeline) ---------- */
   .timeline {
     display: grid;
-    grid-template-columns: 70px 1fr; /* 左邊時間寬度 */
+    grid-template-columns: 70px 1fr;
     gap: 15px;
     margin-bottom: 20px;
   }
   
   .time-label {
-	text-align: center;
-	font-weight: 800;
-	color: var(--accent);
-	background: var(--accent-bg);
-	padding: 8px 0;
-	border-radius: 8px;
-	font-size: 0.9rem;
-	height: fit-content;
-	position: sticky; /* 手機上好用的黏性定位 */
-	top: 70px;
+    text-align: center;
+    font-weight: 800;
+    color: var(--accent);
+    background: var(--accent-bg);
+    padding: 8px 0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    height: fit-content;
+    position: sticky;
+    top: 70px; 
   }
 
   .time-body {
@@ -234,7 +220,7 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.02);
   }
 
-  /* ---------- 7. YouTube & Link 列表 ---------- */
+  /* ---------- 影片與連結 ---------- */
   .section-title { 
     font-size: 1rem; font-weight: 900; color: var(--accent); 
     margin: 20px 0 10px; border-bottom: 2px solid #ffecec; padding-bottom: 4px; 
@@ -260,7 +246,6 @@
   .yt-t { font-size: 0.9rem; font-weight: 700; line-height: 1.4; margin-bottom: 4px; display: block;}
   .yt-d { font-size: 0.8rem; color: #888; display: block; }
 
-  /* 文字連結列表 */
   .links-list { display: flex; flex-direction: column; gap: 10px; }
   .link-item {
     background: #fff; border: 1px solid #eee;
@@ -271,32 +256,17 @@
 
   /* Back to Top 按鈕 */
   .back-to-top {
-    position: fixed;
-    bottom: 25px;
-    right: 20px;
-    width: 46px;
-    height: 46px;
+    position: fixed; bottom: 25px; right: 20px; width: 46px; height: 46px;
     background: linear-gradient(135deg, var(--accent), #ff7e5f);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 14px rgba(232,90,79,0.4);
-    cursor: pointer;
-    border: none;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
+    color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 1.2rem; box-shadow: 0 4px 14px rgba(232,90,79,0.4);
+    cursor: pointer; border: none; z-index: 1000; opacity: 0; visibility: hidden;
+    transform: translateY(10px); transition: all 0.3s ease;
   }
   .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
   .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(232,90,79,0.5); }
 
-  /* RWD 手機調整 */
+  /* 手機版 RWD */
   @media (max-width: 600px) {
     .wrap { padding: 15px; width: 100%; border-radius: 0; box-shadow: none; }
     .timeline { grid-template-columns: 1fr; gap: 8px; }
@@ -310,11 +280,91 @@
     .yt-grid { grid-template-columns: 1fr; } 
     .back-to-top { bottom: 20px; right: 15px; }
   }
-  
+
+  /* =========================================
+     2. 列印專用優化設定 (Print Styles)
+     當您按下 Ctrl+P 時，瀏覽器會自動套用這區塊
+     ========================================= */
   @media print {
-    .nav-bar, .btn-map, .yt-grid, .back-to-top { display: none; }
-    .wrap { box-shadow: none; border: 0; max-width: 100%; }
-    .day { page-break-inside: avoid; }
+    /* 全局強制設定：白底黑字，還原陰影 */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    body { 
+      background-color: #fff !important; 
+      color: #000 !important;
+      padding: 0 !important;
+    }
+
+    .wrap {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    /* 解決標題看不見的問題：改用「白底黑字 + 邊框」 */
+    .day-header {
+      background: #fff !important;  /* 去除漸層背景 */
+      color: #000 !important;       /* 強制文字變黑 */
+      border: 2px solid #e85a4f !important; /* 加回邊框維持視覺感 */
+      margin-bottom: 15px !important;
+      page-break-inside: avoid;
+    }
+    
+    .day-header h2, .day-header p {
+      color: #000 !important;       /* 確保標題內的文字也是黑色 */
+    }
+
+    /* 封面區塊優化 */
+    .hero-box {
+      border: 1px solid #ccc !important;
+      box-shadow: none !important;
+    }
+    .hero-box::before { display: none; } /* 隱藏頂部裝飾條以省墨水 */
+
+    /* 時間軸優化：加上細線邊框 */
+    .time-label {
+      background: #fff !important;
+      border: 1px solid #e85a4f !important;
+      color: #000 !important;
+    }
+    .time-body {
+      border: 1px solid #ddd !important;
+      background: #fff !important;
+    }
+
+    /* 隱藏列印時不需要的功能按鈕 */
+    .nav-bar,       /* 導覽列 */
+    .map-buttons,   /* 地圖按鈕 */
+    .back-to-top,   /* 回到頂部 */
+    .tag            /* 標籤 */
+    { 
+      display: none !important; 
+    }
+
+    /* 連結優化：顯示底線 */
+    a { text-decoration: underline; color: #000 !important; }
+
+    /* 分頁控制：每一天都從新的一頁開始 */
+    section.day { 
+      page-break-before: always; 
+      margin-top: 0 !important;
+      border-top: none !important;
+    }
+    
+    /* 第一天不要強制換頁，接在封面後面 */
+    #day1 { page-break-before: auto; }
+
+    /* 避免內容被切成兩半 */
+    .timeline, .yt-card, .link-item {
+      page-break-inside: avoid;
+    }
   }
 </style>
 </head>
@@ -587,7 +637,7 @@
         江之島神社：主祀弁財天，沿著階梯可遠眺湘南海岸，氣氛悠閒。<br>
         📍 <a href="https://bobbyfun.tw/enoshima/" target="_blank">江之島介紹</a><br>
         若時間充裕，可登上「江之島海蠟燭展望台」欣賞海灣全景。</p>
-        <small style="background:#f9f9f9; padding:8px; border-left:3px solid #ddd; margin-top:8px;">           
+        <small style="background:#f9f9f9; padding:8px; border-left:3px solid #ddd; margin-top:8px;">            
           📌 <strong>可替代安排：</strong><br>
            若當日時間較緊或天候不佳，可略過江之島段落，提早前往橫濱港未來區，<br>
            再將原訂第 4 天的 <strong>川崎行程（LAZONA／KAWASUI／LA CITTADELLA）</strong> 提前安排。<br>
@@ -610,11 +660,11 @@
       <div class="time-body">
         <h3>橫濱夜景散策：港未來 × 紅磚倉庫 × 摩天輪</h3>
         <p>行程建議路線：<a href="https://maps.app.goo.gl/6Ey1HhjfHFFaFSBX6" target="_blank">橫濱站</a> → <a href="https://maps.app.goo.gl/Pt1jGe4KgdT4iZGJ6" target="_blank">櫻木町站</a> → <a href="https://www.yokohama-air-cabin.jp/" target="_blank">YOKOHAMA AIR CABIN</a> → <a href="https://maps.app.goo.gl/rocfZCRRbbKKYhtN8" target="_blank">紅磚倉庫</a> → <a href="https://maps.app.goo.gl/Xfh823hYYHNAtnxf6" target="_blank">COSMOWORLD</a>→ <a href="https://maps.app.goo.gl/m7wkQbTcMf5ZrnJx9" target="_blank">World Porters</a>／<a href="https://maps.app.goo.gl/Di9yn8bTqPAibasz9" target="_blank">Hammerhead。</a></p>
-	   <p>景點亮點：<br>
-      ・橫濱空中纜車：高空俯瞰港灣夜色與摩天輪。<br>
-      ・<a href="https://www.yokohama-akarenga.jp/" target="_blank" rel="noopener noreferrer">紅磚倉庫</a>：百年文創建築、設計選物與甜點咖啡廳。<br>
-      ・<a href="https://cosmoworld.jp/" target="_blank" rel="noopener noreferrer">COSMOWORLD 摩天輪</a>：經典夜景地標，夜間點燈璀璨。<br>
-      ・World Porters／Hammerhead：海景餐廳與購物商場，適合夜間散步。</p>  
+        <p>景點亮點：<br>
+       ・橫濱空中纜車：高空俯瞰港灣夜色與摩天輪。<br>
+       ・<a href="https://www.yokohama-akarenga.jp/" target="_blank" rel="noopener noreferrer">紅磚倉庫</a>：百年文創建築、設計選物與甜點咖啡廳。<br>
+       ・<a href="https://cosmoworld.jp/" target="_blank" rel="noopener noreferrer">COSMOWORLD 摩天輪</a>：經典夜景地標，夜間點燈璀璨。<br>
+       ・World Porters／Hammerhead：海景餐廳與購物商場，適合夜間散步。</p>  
         <small>備用景點：<a href="https://maps.app.goo.gl/yiMyFuB7yPcmbGox7" target="_blank" rel="noopener noreferrer">元町商店街</a>、<a href="https://maps.app.goo.gl/5YR94s1sevVj7hFa6" target="_blank" rel="noopener noreferrer">中華街</a>（適合晚餐）</small>
       </div>
     </div>
@@ -624,80 +674,80 @@
       <div class="time-body">
         <h3>返回錦糸町</h3>
           <p>下午從橫濱返回錦糸町，可選兩種路線（皆需換一次車）：<br>
-             ▸ 東海道線 → 東京站 → JR 總武快速線 → 錦糸町<br>
-             ▸ 京濱東北線 → 秋葉原 → 中央‧總武線各站停車 → 錦糸町<br>
-             兩條線時間相近，依當下班次與人潮彈性選擇。回程可於車站商圈覓食宵夜，為充實豐富的一日畫下完美句點。
-		  </p>
+              ▸ 東海道線 → 東京站 → JR 總武快速線 → 錦糸町<br>
+              ▸ 京濱東北線 → 秋葉原 → 中央‧總武線各站停車 → 錦糸町<br>
+              兩條線時間相近，依當下班次與人潮彈性選擇。回程可於車站商圈覓食宵夜，為充實豐富的一日畫下完美句點。
+          </p>
       </div>
     </div>
 
   <div class="section-title">參考影片</div>
-<div class="yt-grid" id="kawasaki-yokohama">
-  <a class="yt-card" href="https://youtu.be/--VbKEUkjTE" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/--VbKEUkjTE/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">鐮倉Kamakura&江之島Enoshima｜350元一日券暢玩7景點</span>
-      <span class="yt-d">灌籃高手取景平交道、鶴岡八幡宮、鎌倉大佛、小町通商店街</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/ngjzkVmxdOY" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/ngjzkVmxdOY/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">鎌倉古都散策 & 浪漫橫濱夜景</span>
-      <span class="yt-d">江之島與橫濱夜景實拍路線</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/v3wTSMfXmL0" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/v3wTSMfXmL0/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">橫濱YOKOHAMA｜中華街、元町、象鼻冰淇淋</span>
-      <span class="yt-d">橫濱美食與購物路線</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/0d0pfKVk6ZA" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/0d0pfKVk6ZA/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">川崎購物超便利｜10分鐘到橫濱！</span>
-      <span class="yt-d">快速逛川崎三大商場，結合購物與異國街景</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/giZ8dGREMYY" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/giZ8dGREMYY/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">《日本旅遊》橫濱一日遊行程分享</span>
-      <span class="yt-d">摩天輪、紅磚倉庫、中華街、元町商店街</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/iU9-mhKVXYs" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/iU9-mhKVXYs/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">橫濱一日遊：港未來夜景、摩天輪</span>
-      <span class="yt-d">夜景、浪漫約會聖地特輯</span>
-    </div>
-  </a>
-  
-  <a class="yt-card" href="https://youtu.be/i3MMBjYIDkw" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/i3MMBjYIDkw/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">走遍橫濱一日遊散策</span>
-      <span class="yt-d">步行散策橫濱經典景點全收錄</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/KlF1VIU_tIM" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/KlF1VIU_tIM/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">鎌倉江之電一日遊</span>
-      <span class="yt-d">江之電沿線精華路線介紹</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/jzLw-xmoiHA" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/jzLw-xmoiHA/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">東京1小時直達！鎌倉・江之島 ¥800 一日券玩法</span>
-      <span class="yt-d">票券與順遊路線參考</span>
-    </div>
-  </a>
-</div>
+  <div class="yt-grid" id="kawasaki-yokohama">
+    <a class="yt-card" href="https://youtu.be/--VbKEUkjTE" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/--VbKEUkjTE/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">鐮倉Kamakura&江之島Enoshima｜350元一日券暢玩7景點</span>
+        <span class="yt-d">灌籃高手取景平交道、鶴岡八幡宮、鎌倉大佛、小町通商店街</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/ngjzkVmxdOY" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/ngjzkVmxdOY/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">鎌倉古都散策 & 浪漫橫濱夜景</span>
+        <span class="yt-d">江之島與橫濱夜景實拍路線</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/v3wTSMfXmL0" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/v3wTSMfXmL0/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">橫濱YOKOHAMA｜中華街、元町、象鼻冰淇淋</span>
+        <span class="yt-d">橫濱美食與購物路線</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/0d0pfKVk6ZA" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/0d0pfKVk6ZA/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">川崎購物超便利｜10分鐘到橫濱！</span>
+        <span class="yt-d">快速逛川崎三大商場，結合購物與異國街景</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/giZ8dGREMYY" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/giZ8dGREMYY/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">《日本旅遊》橫濱一日遊行程分享</span>
+        <span class="yt-d">摩天輪、紅磚倉庫、中華街、元町商店街</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/iU9-mhKVXYs" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/iU9-mhKVXYs/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">橫濱一日遊：港未來夜景、摩天輪</span>
+        <span class="yt-d">夜景、浪漫約會聖地特輯</span>
+      </div>
+    </a>
+    
+    <a class="yt-card" href="https://youtu.be/i3MMBjYIDkw" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/i3MMBjYIDkw/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">走遍橫濱一日遊散策</span>
+        <span class="yt-d">步行散策橫濱經典景點全收錄</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/KlF1VIU_tIM" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/KlF1VIU_tIM/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">鎌倉江之電一日遊</span>
+        <span class="yt-d">江之電沿線精華路線介紹</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/jzLw-xmoiHA" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/jzLw-xmoiHA/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">東京1小時直達！鎌倉・江之島 ¥800 一日券玩法</span>
+        <span class="yt-d">票券與順遊路線參考</span>
+      </div>
+    </a>
+  </div>
 
     <div class="section-title">參考網站</div>
     <div class="links-list">
@@ -783,12 +833,12 @@
           <li><b><a href="https://kawa-sui.com/" target="_blank" rel="noopener noreferrer">KAWASUI 川崎水族館</a>：</b>位於 <a href="https://www.lefront.jp/" target="_blank" rel="noopener noreferrer">川崎 Le FRONT</a> 10 樓，是日本首座「都市型水族館」，主打沉浸式光影與淡水生態展示。夜間氣氛迷人，非常適合拍照與小憩。（<a href="https://maps.app.goo.gl/A29ASz6zpSoXHHpV9" target="_blank" rel="noopener noreferrer">地圖</a>）<br></li>
           <li><b><a href="https://lacittadella.co.jp/" target="_blank" rel="noopener noreferrer">Le Cittadella</a>：</b>以義大利街景為主題的開放式廣場，充滿異國氛圍，傍晚可欣賞街燈與音樂表演，晚餐選擇豐富。（<a href="https://maps.app.goo.gl/zu2kw3Jr6Fj6SgZf8" target="_blank" rel="noopener noreferrer">地圖</a>）</li>
         </ul>
-        <small>              
+        <small style="background:#f9f9f9; padding:8px; border-left:3px solid #ddd; margin-top:8px;">              
            <b>川崎商店街巡禮：</b>
            若時間允許，可步行前往鄰近的兩條在地商圈：
            <small>
-             <li><a href="https://www.ginryugai.or.jp/" target="_blank" rel="noopener noreferrer">川崎銀柳街商業協同組合</a> — 平行於車站南口的拱廊街，連接多家食堂與咖啡館，夜間氣氛溫馨。（<a href="https://maps.app.goo.gl/bEWYAXvqd5X3UsAA8" target="_blank" rel="noopener noreferrer">地圖</a>）</li>
-             <li><a href="https://www.kawasaki-nakamise.jp/" target="_blank" rel="noopener noreferrer">川崎駅前仲見世通商店街</a> — 結合居酒屋與日式小吃的熱鬧巷道，適合體驗在地生活感。</li>
+             <a href="https://www.ginryugai.or.jp/" target="_blank" rel="noopener noreferrer">川崎銀柳街商業協同組合</a> — 平行於車站南口的拱廊街，連接多家食堂與咖啡館，夜間氣氛溫馨。（<a href="https://maps.app.goo.gl/bEWYAXvqd5X3UsAA8" target="_blank" rel="noopener noreferrer">地圖</a>）<br>
+             <a href="https://www.kawasaki-nakamise.jp/" target="_blank" rel="noopener noreferrer">川崎駅前仲見世通商店街</a> — 結合居酒屋與日式小吃的熱鬧巷道，適合體驗在地生活感。
            </small>
         </small>
       </div>
@@ -798,79 +848,79 @@
       <div class="time-label">20:30</div>
       <div class="time-body">
         <h3>返回錦糸町</h3>
-         <p>建議路線：川崎 →（JR 京濱東北線）→ 秋葉原 →（中央・總武線各停）→ 錦糸町，全程約 35 分鐘，轉乘動線順暢、人潮較少。</p>
-              <p>備用路線：川崎 →（JR 東海道本線）→ 東京 →（總武線快速）→ 錦糸町，約 30 分鐘可達，但東京站轉乘距離較遠，尖峰時段略擁擠。</p>
+          <p>建議路線：川崎 →（JR 京濱東北線）→ 秋葉原 →（中央・總武線各停）→ 錦糸町，全程約 35 分鐘，轉乘動線順暢、人潮較少。</p>
+               <p>備用路線：川崎 →（JR 東海道本線）→ 東京 →（總武線快速）→ 錦糸町，約 30 分鐘可達，但東京站轉乘距離較遠，尖峰時段略擁擠。</p>
       </div>
     </div>
 
- <div class="section-title">參考影片</div>
-<div class="yt-grid" id="day4-videos">
-  <a class="yt-card" href="https://youtu.be/aZPvMvdAdcU" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/aZPvMvdAdcU/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">東京站一番街伴手禮攻略</span>
-      <span class="yt-d">必買甜點、人氣美食與路線建議</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/xNwyp6hVMME" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/xNwyp6hVMME/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">川崎 LA CITTADELLA 春日慶典</span>
-      <span class="yt-d">春日慶典與夜景街區，披薩與甜點滿滿異國感</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/0d0pfKVk6ZA" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/0d0pfKVk6ZA/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">川崎購物三合一</span>
-      <span class="yt-d">LAZONA、Le Front、LA CITTADELLA 一日逛法</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/EEVgJxiQlvI" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/EEVgJxiQlvI/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">上野阿美橫攻略</span>
-      <span class="yt-d">阿美橫路線圖、觀光客建議與必買清單</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/yDxaS32g3vU" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/yDxaS32g3vU/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">阿美橫實拍</span>
-      <span class="yt-d">阿美橫丁市集實拍</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/ghvdOVYZRVE" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/ghvdOVYZRVE/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">上野美食與景點</span>
-      <span class="yt-d">上野美食與景點整理</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/MxS9tUxSy-w" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/MxS9tUxSy-w/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">KAWASUI 官方介紹影片</span>
-      <span class="yt-d">探索都市型水族館的光影設計與生態魅力</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://youtu.be/UTbGxWZ2DSw" target="_blank">
-    <div class="yt-thumb"><img src="https://img.youtube.com/vi/UTbGxWZ2DSw/maxresdefault.jpg" loading="lazy"></div>
-    <div class="yt-info">
-      <span class="yt-t">川崎水族館 4K 實走影片</span>
-      <span class="yt-d">從川崎站出發，實際走訪 KAWASUI 體驗夜間風貌</span>
-    </div>
-  </a>
-  <a class="yt-card" href="https://www.youtube.com/@カワスイ川崎水族館" target="_blank">
-    <div class="yt-thumb">
-      <img src="https://lh3.googleusercontent.com/p/AF1QipNuzlkAdwkuRqITAfiY7cH3U5F5VEH6VWqdEjn6=s680-w680-h510-rw" alt="カワスイ川崎水族館外觀" loading="lazy">
-    </div>
-    <div class="yt-info">
-      <span class="yt-t">カワスイ川崎水族館 官方頻道</span>
-      <span class="yt-d">最新展區亮點、光影秀預告與活動資訊</span>
-    </div>
-  </a>
-</div>
+  <div class="section-title">參考影片</div>
+  <div class="yt-grid" id="day4-videos">
+    <a class="yt-card" href="https://youtu.be/aZPvMvdAdcU" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/aZPvMvdAdcU/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">東京站一番街伴手禮攻略</span>
+        <span class="yt-d">必買甜點、人氣美食與路線建議</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/xNwyp6hVMME" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/xNwyp6hVMME/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">川崎 LA CITTADELLA 春日慶典</span>
+        <span class="yt-d">春日慶典與夜景街區，披薩與甜點滿滿異國感</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/0d0pfKVk6ZA" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/0d0pfKVk6ZA/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">川崎購物三合一</span>
+        <span class="yt-d">LAZONA、Le Front、LA CITTADELLA 一日逛法</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/EEVgJxiQlvI" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/EEVgJxiQlvI/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">上野阿美橫攻略</span>
+        <span class="yt-d">阿美橫路線圖、觀光客建議與必買清單</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/yDxaS32g3vU" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/yDxaS32g3vU/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">阿美橫實拍</span>
+        <span class="yt-d">阿美橫丁市集實拍</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/ghvdOVYZRVE" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/ghvdOVYZRVE/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">上野美食與景點</span>
+        <span class="yt-d">上野美食與景點整理</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/MxS9tUxSy-w" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/MxS9tUxSy-w/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">KAWASUI 官方介紹影片</span>
+        <span class="yt-d">探索都市型水族館的光影設計與生態魅力</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://youtu.be/UTbGxWZ2DSw" target="_blank">
+      <div class="yt-thumb"><img src="https://img.youtube.com/vi/UTbGxWZ2DSw/maxresdefault.jpg" loading="lazy"></div>
+      <div class="yt-info">
+        <span class="yt-t">川崎水族館 4K 實走影片</span>
+        <span class="yt-d">從川崎站出發，實際走訪 KAWASUI 體驗夜間風貌</span>
+      </div>
+    </a>
+    <a class="yt-card" href="https://www.youtube.com/@カワスイ川崎水族館" target="_blank">
+      <div class="yt-thumb">
+        <img src="https://lh3.googleusercontent.com/p/AF1QipNuzlkAdwkuRqITAfiY7cH3U5F5VEH6VWqdEjn6=s680-w680-h510-rw" alt="カワスイ川崎水族館外觀" loading="lazy">
+      </div>
+      <div class="yt-info">
+        <span class="yt-t">カワスイ川崎水族館 官方頻道</span>
+        <span class="yt-d">最新展區亮點、光影秀預告與活動資訊</span>
+      </div>
+    </a>
+  </div>
 
     <div class="section-title">參考網站</div>
     <div class="links-list">
@@ -922,13 +972,13 @@
       <div class="time-label">09:30</div>
       <div class="time-body">
         <h3>上野動物園 × 不忍池散步</h3>
-        <p>日本最古老、最具代表性的動物園，人氣動物包括熊貓「香香」家族 🐼。園區分為東園與西園，設有單軌列車連通，適合親子與家庭同遊。可順道前往不忍池租天鵝船或散步，感受都會中的自然綠意。</p>
+        <p>日本最古老、最具代表性的動物園，人氣動物包括熊貓「香香」家族 🐼。園區分為東園與西園，設有單軌列車連通，適合親子與家庭同遊。可順道前往不忍池租天鵝船或散步。</p>
         <ul>
           <li><strong>開放時間：</strong>09:30–17:00（售票至16:00）</li>
           <li><strong>休園日：</strong>每週一（遇國定假日則順延至隔日休園）</li>
           <li><strong>票價資訊：</strong>成人600日圓／65歲以上300日圓／13–15歲200日圓／12歲以下免費</li>
           <li><a href="https://www.tokyo-zoo.net/chinese/ueno/index.html" target="_blank">上野動物園中文指南（官方）</a></li>
-		  <li><a href="https://www.tokyo-zoo.net/chinese/pdf/map_ueno_international.pdf" target="_blank" rel="noopener noreferrer">園內地圖</a></li>	
+          <li><a href="https://www.tokyo-zoo.net/chinese/pdf/map_ueno_international.pdf" target="_blank" rel="noopener noreferrer">園內地圖</a></li> 
         </ul>
       </div>
     </div>
@@ -938,11 +988,11 @@
       <div class="time-body">
         <h3>上野公園周邊午餐建議</h3>
         <p>可於上野公園周邊餐廳用餐，例如：韻松亭、星乃咖啡、上野之森 PARK SIDE CAFE。</p>        
-		  <small>
+        <ul>
           <li><strong>韻松亭</strong> — 百年老店豆皮懷石料理。</li>
           <li><strong>星乃咖啡</strong> — 厚鬆餅與日式早午餐。</li>
           <li><strong>上野之森 PARK SIDE CAFE</strong> — 坐擁公園綠蔭的歐風咖啡館。</li>
-        </small>
+        </ul>
       </div>
     </div>
 
@@ -1021,7 +1071,7 @@
               <a href="https://kinshicho.parco.jp/" target="_blank" rel="noopener noreferrer">PARCO</a>（<a href="https://maps.app.goo.gl/Mp8SA3Bs5CRLuj5j9" target="_blank" rel="noopener noreferrer">地圖</a>）      ｜ 
               <a href="https://www.arcakit.com/" target="_blank" rel="noopener noreferrer">ARCAKIT</a>（<a href="https://maps.app.goo.gl/5N5WSFAkeAdBQctM8" target="_blank" rel="noopener noreferrer">地圖</a>）      ｜
               <a href="https://www.olinas.jp/" target="_blank" rel="noopener noreferrer">Olinas</a>（<a href="https://maps.app.goo.gl/ivpcuLxk5igx64x67" target="_blank" rel="noopener noreferrer">地圖</a>）    
-            </p>		  
+            </p>        
       </div>
     </div>
 
