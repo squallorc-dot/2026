@@ -86,12 +86,14 @@
   
   h2 { font-size: 1.15rem; margin: 0; color: #fff; font-weight: 700; }
   h3 { font-size: 1.05rem; margin: 0 0 6px 0; color: #222; font-weight: 800; }
+  h4 { font-size: 1rem; margin: 15px 0 6px 0; color: var(--accent); font-weight: 700; } /* 新增 h4 */
   p { margin: 8px 0; font-size: 0.95rem; color: #333; text-align: justify; }
   
   /* 封面專用的文字樣式 (置中) */
   .hero-box p { text-align: center; margin: 6px 0; }
 
   ul { margin: 8px 0 8px 20px; padding: 0; color: #333; font-size: 0.95rem; }
+  ol { margin: 8px 0 8px 20px; padding: 0; color: #333; font-size: 0.95rem; } /* 新增 ol */
   li { margin-bottom: 6px; }
   small, .small { font-size: 0.85rem; color: var(--text-muted); display: block; line-height: 1.4; }
   
@@ -333,10 +335,13 @@
       background: #fff !important;
       border: 1px solid #e85a4f !important;
       color: #000 !important;
+      position: static !important; /* 避免 sticky 造成列印問題 */
+      top: auto !important;
     }
     .time-body {
       border: 1px solid #ddd !important;
       background: #fff !important;
+      page-break-inside: avoid; /* 確保內容不被截斷 */
     }
 
     /* 隱藏列印時不需要的功能按鈕 */
@@ -356,14 +361,14 @@
       page-break-before: always; 
       margin-top: 0 !important;
       border-top: none !important;
-    }
-    
-    /* 第一天不要強制換頁，接在封面後面 */
-    #day1 { page-break-before: auto; }
+    }   
 
     /* 避免內容被切成兩半 */
-    .timeline, .yt-card, .link-item {
+    .timeline, .yt-card, .link-item, ul, ol, p, small { /* 加強列表與段落的避免中斷 */
       page-break-inside: avoid;
+      line-height: 1.5 !important; /* 調整行高，避免內容過於擁擠 */
+      orphans: 3; /* 避免行首孤行 */
+      widows: 3;  /* 避免行尾孤行 */
     }
   }
 </style>
@@ -1232,3 +1237,4 @@
 </script>
 </body>
 </html>
+
