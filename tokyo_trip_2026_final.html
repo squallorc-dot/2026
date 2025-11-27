@@ -354,10 +354,24 @@
   margin-top: 2px;
 }
 
+/* 讓圖片容器置中並設定邊距 */
+.day-illustration {
+	margin: 30px auto; /* 調整上下邊距 */
+	text-align: center; /* 圖片置中 */
+	max-width: 100%; /* 確保圖片容器不會超出頁面寬度 */
+}
+
+/* 確保圖片響應式，不超出容器，並添加一些視覺效果 */
+.day-illustration img {
+	max-width: 100%; /* 確保圖片寬度不超過父容器 */
+	height: auto; /* 高度自動調整 */
+	border-radius: 8px; /* 輕微圓角 */
+	display: block; /* 避免圖片下方有額外空白 */
+	margin: 0 auto; /* 再次確保圖片在容器內水平置中 */
+}
 
   /* =========================================
      2. 列印專用優化設定 (Print Styles)
-     當您按下 Ctrl+P 時，瀏覽器會自動套用這區塊
      ========================================= */
   @media print {
     /* 全局強制設定：白底黑字，還原陰影 */
@@ -442,20 +456,24 @@
       orphans: 3; /* 避免行首孤行 */
       widows: 3;  /* 避免行尾孤行 */
     }
-	  
-/* 去趣APP列印優化 */
-@media print {
-  .chic-trip-section {
-    background-color: #fff;
-    border: 1px solid #eee;
-    box-shadow: none;
-    page-break-inside: avoid;
-  }
-  .chic-trip-icon {
-    background-color: #eee;
-    color: #333;
-  }
-}
+      
+    /* 去趣APP列印優化 */
+    .chic-trip-section {
+      background-color: #fff;
+      border: 1px solid #eee;
+      box-shadow: none;
+      page-break-inside: avoid;
+    }
+    .chic-trip-icon {
+	background-color: #eee;
+	color: #333;
+    }
+
+    /* 圖片列印優化 */
+    .day-illustration {
+	page-break-inside: avoid; /* 避免圖片被切斷在不同頁面 */
+	page-break-after: avoid;  /* 圖片後不強制換頁 */
+    }
   }
 </style>
 </head>
@@ -515,8 +533,7 @@
     </div>
   </a>
 </div>
-	
-	
+    
 <div class="overview">
   <h3 style="margin-bottom:10px; color:var(--accent);">精彩旅程一覽</h3>
   <div class="overview-row"><strong>Day 1：</strong>安抵東京 · 錦糸町溫馨入住 (旅程啟程)</div>
@@ -568,7 +585,11 @@
     </small>
   </div>
 </div>
-
+    
+<div class="day-illustration">
+  <img src="https://squallorc-dot.github.io/2026/images/day1.jpg" alt="Day 1 東京行程封面：肥嘟嘟家族抵達成田機場，搭JR火車前往錦糸町飯店，享用晚餐拉麵。" loading="lazy">
+</div>
+    
 <div class="section-title">交通小提示</div>
 <div class="links-list">
   <a class="link-item" href="https://maps.app.goo.gl/2Y5t7PEvwm6jWYm5A" target="_blank">
@@ -585,7 +606,7 @@
   <section id="day2" class="day">
     <div class="day-header">
       <h2>Day2｜2026/01/21（三） 銀座 → 表參道 / 原宿 → 澀谷</h2>
-      <p>主題：銀座精品 × 藝術水族館 × 原宿潮流 × 澀谷夜景</p>
+      <p>主題：銀座精品 × 藝術水族館 × 原宿潮流 × 澀谷夜景</p>        
     </div>
 
     <div class="map-buttons">
@@ -647,7 +668,11 @@
         <p>澀谷 → 半藏門線直達錦糸町（約 30–35 分鐘），不用換車。回程可在車站商圈覓宵夜，結束充實的一日。</p>
       </div>
     </div>
-
+    
+    <div class="day-illustration">
+      <img src="https://squallorc-dot.github.io/2026/images/day2.jpg" alt="Day 2 東京行程封面：肥嘟嘟家族在銀座購物，原宿表參道逛街，並在澀谷欣賞夜景。" loading="lazy">
+    </div>
+    
     <div class="section-title">參考影片</div>
     <div class="yt-grid" id="shibuya-ginza">
       <a class="yt-card" href="https://youtu.be/7eLjH5d9N44" target="_blank">
@@ -706,11 +731,11 @@
       </a>
     </div>
   </section>
-
-  <section id="day3" class="day">
+	
+<section id="day3" class="day">
     <div class="day-header">
       <h2>Day3｜2026/01/22（四）鎌倉 → 江之島 → 橫濱</h2>
-      <p>主題：歷史文化 × 海島散策 × 港未來夜景</p>
+      <p>主題：歷史文化 × 海島散策 × 港未來夜景</p> 
     </div>
 
     <div class="map-buttons">
@@ -738,8 +763,6 @@
     </p>
   </div>
 </div>
-
-
 
     <div class="timeline">
       <div class="time-label">10:00</div>
@@ -777,7 +800,7 @@
            若當日時間較緊或天候不佳，可略過江之島段落，提早前往橫濱港未來區，<br>
            再將原訂第 4 天的 <strong>川崎行程（LAZONA／KAWASUI／LA CITTADELLA）</strong> 提前安排。<br>
            川崎站距離橫濱僅約 10 分鐘車程，交通便利，可順遊購物與水族館景點。
-         </small>
+          </small>
       </div>
     </div>
 
@@ -824,10 +847,10 @@
         <h3>橫濱夜景散策：港未來 × 紅磚倉庫 × 摩天輪</h3>
         <p>行程建議路線：<a href="https://maps.app.goo.gl/6Ey1HhjfHFFaFSBX6" target="_blank">橫濱站</a> → <a href="https://maps.app.goo.gl/Pt1jGe4KgdT4iZGJ6" target="_blank">櫻木町站</a> → <a href="https://www.yokohama-air-cabin.jp/" target="_blank">YOKOHAMA AIR CABIN</a> → <a href="https://maps.app.goo.gl/rocfZCRRbbKKYhtN8" target="_blank">紅磚倉庫</a> → <a href="https://maps.app.goo.gl/Xfh823hYYHNAtnxf6" target="_blank">COSMOWORLD</a>→ <a href="https://maps.app.goo.gl/m7wkQbTcMf5ZrnJx9" target="_blank">World Porters</a>／<a href="https://maps.app.goo.gl/Di9yn8bTqPAibasz9" target="_blank">Hammerhead。</a></p>
         <p>景點亮點：<br>
-       ・橫濱空中纜車：高空俯瞰港灣夜色與摩天輪。<br>
-       ・<a href="https://www.yokohama-akarenga.jp/" target="_blank" rel="noopener noreferrer">紅磚倉庫</a>：百年文創建築、設計選物與甜點咖啡廳。<br>
-       ・<a href="https://cosmoworld.jp/" target="_blank" rel="noopener noreferrer">COSMOWORLD 摩天輪</a>：經典夜景地標，夜間點燈璀璨。<br>
-       ・World Porters／Hammerhead：海景餐廳與購物商場，適合夜間散步。</p>  
+        ・橫濱空中纜車：高空俯瞰港灣夜色與摩天輪。<br>
+        ・<a href="https://www.yokohama-akarenga.jp/" target="_blank" rel="noopener noreferrer">紅磚倉庫</a>：百年文創建築、設計選物與甜點咖啡廳。<br>
+        ・<a href="https://cosmoworld.jp/" target="_blank" rel="noopener noreferrer">COSMOWORLD 摩天輪</a>：經典夜景地標，夜間點燈璀璨。<br>
+        ・World Porters／Hammerhead：海景餐廳與購物商場，適合夜間散步。</p>  
         <small>備用景點：<a href="https://maps.app.goo.gl/yiMyFuB7yPcmbGox7" target="_blank" rel="noopener noreferrer">元町商店街</a>、<a href="https://maps.app.goo.gl/5YR94s1sevVj7hFa6" target="_blank" rel="noopener noreferrer">中華街</a>（適合晚餐）</small>
       </div>
     </div>
@@ -843,7 +866,11 @@
           </p>
       </div>
     </div>
-
+    
+    <div class="day-illustration">
+      <img src="https://squallorc-dot.github.io/2026/images/day3.jpg" alt="Day 3 東京行程封面：肥嘟嘟家族暢遊鎌倉小町通，搭江之電前往江之島，最終欣賞橫濱港未來夜景。" loading="lazy">
+    </div>
+    
   <div class="section-title">參考影片</div>
   <div class="yt-grid" id="kawasaki-yokohama">
     <a class="yt-card" href="https://youtu.be/--VbKEUkjTE" target="_blank">
@@ -944,7 +971,7 @@
   <section id="day4" class="day">
     <div class="day-header">
       <h2>Day4｜2026/01/23（五） 錦糸町 → 上野阿美橫丁 → 東京站一番街 → 川崎</h2>
-      <p>主題：在地市場 × 經典車站 × 異國風購物街</p>
+      <p>主題：在地市場 × 經典車站 × 異國風購物街</p> 
     </div>
 
     <div class="map-buttons">
@@ -1015,7 +1042,11 @@
                <p>備用路線：川崎 →（JR 東海道本線）→ 東京 →（總武線快速）→ 錦糸町，約 30 分鐘可達，但東京站轉乘距離較遠，尖峰時段略擁擠。</p>
       </div>
     </div>
-
+    
+    <div class="day-illustration">
+      <img src="https://squallorc-dot.github.io/2026/images/day4.jpg" alt="Day 4 東京行程封面：肥嘟嘟家族在上野阿美橫丁購物，東京車站買伴手禮，並在川崎LAZONA逛街和參觀水族館。" loading="lazy">
+    </div>
+    
   <div class="section-title">參考影片</div>
   <div class="yt-grid" id="day4-videos">
     <a class="yt-card" href="https://youtu.be/aZPvMvdAdcU" target="_blank">
@@ -1271,7 +1302,11 @@
   </div>
 </div>
 
-
+    <div class="day-illustration">
+      <img src="https://squallorc-dot.github.io/2026/images/day5.jpg" alt="Day 5 東京行程封面：肥嘟嘟家族參觀晴空塔，在錦糸町周邊購物，最終前往成田機場搭機返家。" loading="lazy">
+    </div>    
+    
+    
     <div class="section-title">參考影片</div>
     <div class="yt-grid" id="day5-videos">
       <a class="yt-card" href="https://youtu.be/Jup1B7sVI7Q" target="_blank">
@@ -1392,7 +1427,7 @@
       a.href = b.url;
       a.target = '_blank';
       a.innerHTML = `<div class="yt-thumb"><img src="https://img.youtube.com/vi/${id}/maxresdefault.jpg" loading="lazy"></div>
-                     <div class="yt-info"><span class="yt-t">${b.title}</span></div>`;
+                      <div class="yt-info"><span class="yt-t">${b.title}</span></div>`;
       const img = a.querySelector('img');
       img.addEventListener('error', function(){ this.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`; });
       container.appendChild(a);
@@ -1416,5 +1451,3 @@
 </script>
 </body>
 </html>
-
-
