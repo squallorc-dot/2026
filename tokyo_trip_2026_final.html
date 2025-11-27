@@ -258,12 +258,26 @@
 
   /* Back to Top 按鈕 */
   .back-to-top {
-    position: fixed; bottom: 25px; right: 20px; width: 46px; height: 46px;
-    background: linear-gradient(135deg, var(--accent), #ff7e5f);
-    color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-weight: 900; font-size: 1.2rem; box-shadow: 0 4px 14px rgba(232,90,79,0.4);
-    cursor: pointer; border: none; z-index: 1000; opacity: 0; visibility: hidden;
-    transform: translateY(10px); transition: all 0.3s ease;
+	position: fixed;
+	bottom: 25px;
+	right: 20px;
+	width: 46px;
+	height: 46px;
+	background: linear-gradient(135deg, var(--accent), #ff7e5f);
+	color: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 900;
+	font-size: 1.2rem;
+	cursor: pointer;
+	border: none;
+	z-index: 1000;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition: all 0.3s ease;
   }
   .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
   .back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(232,90,79,0.5); }
