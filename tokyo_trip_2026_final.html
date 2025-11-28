@@ -86,14 +86,14 @@
   
   h2 { font-size: 1.15rem; margin: 0; color: #fff; font-weight: 700; }
   h3 { font-size: 1.05rem; margin: 0 0 6px 0; color: #222; font-weight: 800; }
-  h4 { font-size: 1rem; margin: 15px 0 6px 0; color: var(--accent); font-weight: 700; } /* 新增 h4 */
+  h4 { font-size: 1rem; margin: 15px 0 6px 0; color: var(--accent); font-weight: 700; }
   p { margin: 8px 0; font-size: 0.95rem; color: #333; text-align: justify; }
   
   /* 封面專用的文字樣式 (置中) */
   .hero-box p { text-align: center; margin: 6px 0; }
 
   ul { margin: 8px 0 8px 20px; padding: 0; color: #333; font-size: 0.95rem; }
-  ol { margin: 8px 0 8px 20px; padding: 0; color: #333; font-size: 0.95rem; } /* 新增 ol */
+  ol { margin: 8px 0 8px 20px; padding: 0; color: #333; font-size: 0.95rem; }
   li { margin-bottom: 6px; }
   small, .small { font-size: 0.85rem; color: var(--text-muted); display: block; line-height: 1.4; }
   
@@ -170,7 +170,7 @@
     padding-top: 30px;
   }
   
-  /* Day Header - 陰影顏色為灰色 */
+  /* Day Header */
   .day-header {
     background: linear-gradient(135deg, var(--accent), #ff7e5f);
     border-radius: 12px;
@@ -297,98 +297,111 @@
     .back-to-top { bottom: 20px; right: 15px; }
   }
 
-/* 去趣 App 區塊（灰色更淡的版本） */
-.chic-trip-section {
-  background-color: #fafafa; /* 更淡的灰色 */
-  border: 1px solid #f1f1f1; /* 更淡的邊框 */
-  border-radius: 10px;
-  padding: 16px;
-  margin: 24px 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04); /* 更輕的陰影 */
-}
+  /* 去趣 App 區塊 */
+  .chic-trip-section {
+    background-color: #fafafa;
+    border: 1px solid #f1f1f1;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 24px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  }
 
-.chic-trip-header {
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 6px;
-  font-size: 1rem;
-}
+  .chic-trip-header {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 6px;
+    font-size: 1rem;
+  }
 
-.chic-trip-desc {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
+  .chic-trip-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
 
-.chic-trip-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #333;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 10px 14px;
-  transition: all 0.2s ease-in-out;
-}
+  .chic-trip-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 14px;
+    transition: all 0.2s ease-in-out;
+  }
 
-.chic-trip-link:hover {
-  background-color: #f3f3f3; /* hover 也調淡一點 */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-  transform: translateY(-2px);
-}
+  .chic-trip-link:hover {
+    background-color: #f3f3f3;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
 
-.chic-trip-icon {
-  background-color: var(--accent);
-  color: #fff;
-  font-weight: 700;
-  padding: 5px 8px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  margin-right: 12px;
-  flex-shrink: 0;
-}
+  .chic-trip-icon {
+    background-color: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
 
-.chic-trip-info {
-  display: flex;
-  flex-direction: column;
-}
+  .chic-trip-info {
+    display: flex;
+    flex-direction: column;
+  }
 
-.chic-trip-title {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--text-main);
-  line-height: 1.3;
-}
+  .chic-trip-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    line-height: 1.3;
+  }
 
-.chic-trip-date {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-top: 2px;
-}
+  .chic-trip-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
 
-/* 讓圖片容器置中並設定邊距 */
-.day-illustration {
-	margin: 30px auto; /* 調整上下邊距 */
-	text-align: center; /* 圖片置中 */
-	max-width: 100%; /* 確保圖片容器不會超出頁面寬度 */
-}
+  /* 讓圖片容器置中並設定邊距 */
+  .day-illustration {
+    margin: 30px auto; 
+    text-align: center;
+    max-width: 100%;
+  }
 
-/* 確保圖片響應式，不超出容器，並添加一些視覺效果 */
-.day-illustration img {
-	max-width: 100%; /* 確保圖片寬度不超過父容器 */
-	height: auto; /* 高度自動調整 */
-	border-radius: 8px; /* 輕微圓角 */
-	display: block; /* 避免圖片下方有額外空白 */
-	margin: 0 auto; /* 再次確保圖片在容器內水平置中 */
-}
+  /* 確保圖片響應式 */
+  .day-illustration img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+	display: block;
+	margin: 0 auto;
+  }
+  
+  /* 交通地圖容器 */
+  .map-container {
+    padding: 20px;
+    background-color: #fcfcfc;
+    border-bottom: 1px dashed #e0e0e0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .map-container img {
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+  }
 
   /* =========================================
      2. 列印專用優化設定 (Print Styles)
      ========================================= */
   @media print {
-    /* 全局強制設定：白底黑字，還原陰影 */
     * {
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
@@ -410,68 +423,56 @@
       padding: 0 !important;
     }
 
-    /* 解決標題看不見的問題：改用「白底黑字 + 邊框」 */
     .day-header {
-      background: #fff !important;  /* 去除漸層背景 */
-      color: #000 !important;       /* 強制文字變黑 */
-      border: 2px solid #e85a4f !important; /* 加回邊框維持視覺感 */
+      background: #fff !important;
+      color: #000 !important;
+      border: 2px solid #e85a4f !important;
       margin-bottom: 15px !important;
       page-break-inside: avoid;
     }
     
     .day-header h2, .day-header p {
-      color: #000 !important;       /* 確保標題內的文字也是黑色 */
+      color: #000 !important;
     }
 
-    /* 封面區塊優化 */
     .hero-box {
       border: 1px solid #ccc !important;
       box-shadow: none !important;
     }
-    .hero-box::before { display: none; } /* 隱藏頂部裝飾條以省墨水 */
+    .hero-box::before { display: none; }
 
-    /* 時間軸優化：加上細線邊框 */
     .time-label {
       background: #fff !important;
       border: 1px solid #e85a4f !important;
       color: #000 !important;
-      position: static !important; /* 避免 sticky 造成列印問題 */
+      position: static !important;
       top: auto !important;
     }
     .time-body {
       border: 1px solid #ddd !important;
       background: #fff !important;
-      page-break-inside: avoid; /* 確保內容不被截斷 */
+      page-break-inside: avoid;
     }
 
-    /* 隱藏列印時不需要的功能按鈕 */
-    .nav-bar,       /* 導覽列 */
-    .map-buttons,   /* 地圖按鈕 */
-    .back-to-top,   /* 回到頂部 */
-    .tag            /* 標籤 */
-    { 
+    .nav-bar, .map-buttons, .back-to-top, .tag { 
       display: none !important; 
     }
 
-    /* 連結優化：顯示底線 */
     a { text-decoration: underline; color: #000 !important; }
 
-    /* 分頁控制：每一天都從新的一頁開始 */
     section.day { 
       page-break-before: always; 
       margin-top: 0 !important;
       border-top: none !important;
     }   
 
-    /* 避免內容被切成兩半 */
-    .timeline, .yt-card, .link-item, ul, ol, p, small { /* 加強列表與段落的避免中斷 */
+    .timeline, .yt-card, .link-item, ul, ol, p, small {
       page-break-inside: avoid;
-      line-height: 1.5 !important; /* 調整行高，避免內容過於擁擠 */
-      orphans: 3; /* 避免行首孤行 */
-      widows: 3;  /* 避免行尾孤行 */
+      line-height: 1.5 !important;
+      orphans: 3;
+      widows: 3;
     }
       
-    /* 去趣APP列印優化 */
     .chic-trip-section {
       background-color: #fff;
       border: 1px solid #eee;
@@ -479,19 +480,27 @@
       page-break-inside: avoid;
     }
     .chic-trip-icon {
-	background-color: #eee;
-	color: #333;
+      background-color: #eee;
+      color: #333;
     }
 
-    /* 圖片列印優化 */
     .day-illustration {
-	page-break-inside: avoid; /* 避免圖片被切斷在不同頁面 */
-	page-break-after: avoid;  /* 圖片後不強制換頁 */
+      page-break-inside: avoid;
+      page-break-after: avoid;
+    }
+    
+    .map-container {
+      background-color: #fff; 
+      border-bottom: 1px solid #ccc;
+    }
+    .map-container img {
+      box-shadow: none; 
+      border: 1px solid #ddd;
     }
   }
 </style>
 </head>
-
+	
 <body>
 <div class="wrap">
 
@@ -526,96 +535,89 @@
     <a class="nav-btn" href="#day5">Day5｜01/24</a>
   </div>
 
-<div class="chic-trip-section">
-  <div class="chic-trip-header">
-    💡 實時路線規劃工具：去趣（Chic Trip）APP
-  </div>
-
-  <p class="chic-trip-desc">
-    點擊下方連結，可直接在去趣 APP 查看本行程的<strong>即時交通與移動時間</strong>。比 Google 地圖更適合完整查看一天的動線。
-  </p>
-
-  <a class="chic-trip-link"
-     href="https://chictrip-share.app.link/4Ogr0VNcvYb"
-     target="_blank" rel="noopener noreferrer">
-
-    <span class="chic-trip-icon">APP</span>
-
-    <div class="chic-trip-info">
-      <span class="chic-trip-title">東京五日：都會 & 近郊 (2026.01)</span>
-      <small class="chic-trip-date">行程日期：2026/01/20 ~ 2026/01/24</small>
+  <div class="chic-trip-section">
+    <div class="chic-trip-header">
+      💡 實時路線規劃工具：去趣（Chic Trip）APP
     </div>
-  </a>
-</div>
-    
-<div class="overview">
-  <h3 style="margin-bottom:10px; color:var(--accent);">精彩旅程一覽</h3>
-  <div class="overview-row"><strong>Day 1：</strong>安抵東京 · 錦糸町溫馨入住 (旅程啟程)</div>
-  <div class="overview-row"><strong>Day 2：</strong>時尚都會巡禮：銀座、原宿、澀谷不夜城</div>
-  <div class="overview-row"><strong>Day 3：</strong>湘南海岸風情：鎌倉古韻、江之島海景、橫濱港灣</div>
-  <div class="overview-row"><strong>Day 4：</strong>東京多元探索：上野市集、東京站、川崎異國情調</div>
-  <div class="overview-row"><strong>Day 5：</strong>高空俯瞰東京：晴空塔、錦糸町購物、準備歸途</div>
-</div>
-
-<section id="day1" class="day">
-  <div class="day-header">
-    <h2>Day1｜2026/01/20（二） 抵達日</h2>
-    <p>航班：TR874 桃園15:30 → 成田19:55 · 入住：Tobu Hotel Levant Tokyo（錦糸町）</p>
+    <p class="chic-trip-desc">
+      點擊下方連結，可直接在去趣 APP 查看本行程的<strong>即時交通與移動時間</strong>。比 Google 地圖更適合完整查看一天的動線。
+    </p>
+    <a class="chic-trip-link" href="https://chictrip-share.app.link/4Ogr0VNcvYb" target="_blank" rel="noopener noreferrer">
+      <span class="chic-trip-icon">APP</span>
+      <div class="chic-trip-info">
+        <span class="chic-trip-title">東京五日：都會 & 近郊 (2026.01)</span>
+        <small class="chic-trip-date">行程日期：2026/01/20 ~ 2026/01/24</small>
+      </div>
+    </a>
   </div>
-  
-  <div class="map-buttons">
-    <a class="btn-map" href="https://maps.app.goo.gl/JgBmNirG2YugpsTz9" target="_blank">🗺️ 查看飯店地圖</a>
+    
+  <div class="overview">
+    <h3 style="margin-bottom:10px; color:var(--accent);">精彩旅程一覽</h3>
+    <div class="overview-row"><strong>Day 1：</strong>安抵東京 · 錦糸町溫馨入住 (旅程啟程)</div>
+    <div class="overview-row"><strong>Day 2：</strong>時尚都會巡禮：銀座、原宿、澀谷不夜城</div>
+    <div class="overview-row"><strong>Day 3：</strong>湘南海岸風情：鎌倉古韻、江之島海景、橫濱港灣</div>
+    <div class="overview-row"><strong>Day 4：</strong>東京多元探索：上野市集、東京站、川崎異國情調</div>
+    <div class="overview-row"><strong>Day 5：</strong>高空俯瞰東京：晴空塔、錦糸町購物、準備歸途</div>
   </div>
 
-<div class="timeline">
-  <div class="time-label">19:55</div>
-  <div class="time-body">
-    <h3>抵達成田 → 前往錦糸町（家庭旅客建議路線）</h3>
-    <p>依行李量、預算與便利性，以下提供最適合 5 位成人＋2 位小孩的兩種方式：</p>
-    
-    <h4>方案 A｜JR 總武線快速列車（最推薦 · 直達免轉乘）</h4>
-    <p>最適合家庭與行李較多的旅客，無需轉乘、車廂空間較寬敞，也可加購 Green Car 提升舒適度。</p>
-    <ol>
-      <li>抵達成田 → 入境領行李 → 前往 <strong>JR 成田空港站</strong>（地下一樓）。</li>
-      <li>搭乘 <strong>JR 総武線快速（快速列車）</strong> → <strong>直達錦糸町站</strong>（約 85–95 分鐘）。</li>
-      <li>錦糸町站北口出站 → 步行 3–5 分鐘至 <strong>Tobu Hotel Levant Tokyo</strong>。</li>
-    </ol>
-    <small><b>費用參考：</b> 約 ¥1,340（IC）。若想更舒適，可於月台購買 <b>Green Car</b>（約 ¥1,000），有對號座與行李空間。</small>
-    <small style="display:block;margin-top:6px;">※ 上車請務必確認列車標示為「<strong>快速</strong>」，避免誤搭各站停車。</small>
+  <section id="day1" class="day">
+    <div class="day-header">
+      <h2>Day1｜2026/01/20（二） 抵達日</h2>
+      <p>航班：TR874 桃園15:30 → 成田19:55 · 入住：Tobu Hotel Levant Tokyo（錦糸町）</p>
+    </div>
+    <div class="map-buttons">
+      <a class="btn-map" href="https://maps.app.goo.gl/JgBmNirG2YugpsTz9" target="_blank">🗺️ 查看飯店地圖</a>
+    </div>
 
-    <h4>方案 B｜京成 Access 特急 + 半藏門線（較快 · 需換乘一次）</h4>
-    <p>時間略快，但需在押上換乘一次，對行李較多的旅客略有不便。</p>
-    <ol>
-      <li>抵達成田 → 入境領行李 → 前往 <strong>京成電鐵 成田空港站</strong>（地下一樓）。</li>
-      <li>搭乘 <strong>京成 Access 特急</strong> → 押上站（約 50–60 分鐘）。</li>
-      <li>於押上站換乘 <strong>東京 Metro 半蔵門線</strong>（往澀谷方向） → 錦糸町站（1 站 · 約 3 分鐘）。</li>
-      <li>北口出站 → 步行 3–5 分鐘至 <strong>Tobu Hotel Levant Tokyo</strong>。</li>
-    </ol>
-    <small><b>費用參考：</b> 約 ¥1,350（IC）。列車為一般通勤型，無行李架，換乘時需留意人潮。</small>
-    <small style="display:block;margin-top:6px;">※ 押上站內換乘區域較大，步行約 3–5 分鐘。</small>
+    <div class="timeline">
+      <div class="time-label">19:55</div>
+      <div class="time-body">
+        <h3>抵達成田 → 前往錦糸町（家庭旅客建議路線）</h3>
+        <p>依行李量、預算與便利性，以下提供最適合 5 位成人＋2 位小孩的兩種方式：</p>
+        
+        <h4>方案 A｜JR 總武線快速列車（最推薦 · 直達免轉乘）</h4>
+        <p>最適合家庭與行李較多的旅客，無需轉乘、車廂空間較寬敞，也可加購 Green Car 提升舒適度。</p>
+        <ol>
+          <li>抵達成田 → 入境領行李 → 前往 <strong>JR 成田空港站</strong>（地下一樓）。</li>
+          <li>搭乘 <strong>JR 総武線快速（快速列車）</strong> → <strong>直達錦糸町站</strong>（約 85–95 分鐘）。</li>
+          <li>錦糸町站北口出站 → 步行 3–5 分鐘至 <strong>Tobu Hotel Levant Tokyo</strong>。</li>
+        </ol>
+        <small><b>費用參考：</b> 約 ¥1,340（IC）。若想更舒適，可於月台購買 <b>Green Car</b>（約 ¥1,000），有對號座與行李空間。</small>
+        <small style="display:block;margin-top:6px;">※ 上車請務必確認列車標示為「<strong>快速</strong>」，避免誤搭各站停車。</small>
 
-    <small style="background:#f9f9f9; padding:8px; border-left:3px solid #ddd; display:block; margin-top:10px;">
-      航班抵達時間 19:55，預計 20:50–21:10 出關，能順利搭到以上方案的列車，末班車時間皆綽綽有餘。
-    </small>
-  </div>
-</div>
+        <h4>方案 B｜京成 Access 特急 + 半藏門線（較快 · 需換乘一次）</h4>
+        <p>時間略快，但需在押上換乘一次，對行李較多的旅客略有不便。</p>
+        <ol>
+          <li>抵達成田 → 入境領行李 → 前往 <strong>京成電鐵 成田空港站</strong>（地下一樓）。</li>
+          <li>搭乘 <strong>京成 Access 特急</strong> → 押上站（約 50–60 分鐘）。</li>
+          <li>於押上站換乘 <strong>東京 Metro 半蔵門線</strong>（往澀谷方向） → 錦糸町站（1 站 · 約 3 分鐘）。</li>
+          <li>北口出站 → 步行 3–5 分鐘至 <strong>Tobu Hotel Levant Tokyo</strong>。</li>
+        </ol>
+        <small><b>費用參考：</b> 約 ¥1,350（IC）。列車為一般通勤型，無行李架，換乘時需留意人潮。</small>
+        <small style="display:block;margin-top:6px;">※ 押上站內換乘區域較大，步行約 3–5 分鐘。</small>
+
+        <small style="background:#f9f9f9; padding:8px; border-left:3px solid #ddd; display:block; margin-top:10px;">
+          航班抵達時間 19:55，預計 20:50–21:10 出關，能順利搭到以上方案的列車，末班車時間皆綽綽有餘。
+        </small>
+      </div>
+    </div>
     
-<div class="day-illustration">
-  <img src="https://squallorc-dot.github.io/2026/images/day1.jpg" alt="Day 1 東京行程封面：肥嘟嘟家族抵達成田機場，搭JR火車前往錦糸町飯店，享用晚餐拉麵。" loading="lazy">
-</div>
+    <div class="day-illustration">
+      <img src="https://squallorc-dot.github.io/2026/images/day1.jpg" alt="Day 1 東京行程封面：肥嘟嘟家族抵達成田機場，搭JR火車前往錦糸町飯店，享用晚餐拉麵。" loading="lazy">
+    </div>
     
-<div class="section-title">交通小提示</div>
-<div class="links-list">
-  <a class="link-item" href="https://maps.app.goo.gl/2Y5t7PEvwm6jWYm5A" target="_blank">
-    <div>成田機場 → 錦糸町（Google 地圖）</div>
-    <small>查看最即時的列車班次、路線與票價資訊。</small>
-  </a>
-  <a class="link-item" href="https://www.jorudan.co.jp/time/to/%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%EF%BC%88%E6%88%90%E7%94%B0%E7%AC%AC%EF%BC%91%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%EF%BC%89_%E9%8C%A6%E7%B3%B8%E7%94%BA/?Dym=202601&Ddd=20&r=%E7%B7%8F%E6%AD%A6%E7%B7%9A%E5%BF%AB%E9%80%9F%E3%83%BB%E6%A8%AA%E9%A0%88%E8%B3%80%E7%B7%9A" target="_blank">
-    <div>JR 總武線快速列車時刻表 (Jorudan)</div>
-    <small>查閱 JR 總武線快速從成田機場前往錦糸町方向的時刻表。</small>
-  </a>
-</div>
-</section>
+    <div class="section-title">交通小提示</div>
+    <div class="links-list">
+      <a class="link-item" href="https://maps.app.goo.gl/2Y5t7PEvwm6jWYm5A" target="_blank">
+        <div>成田機場 → 錦糸町（Google 地圖）</div>
+        <small>查看最即時的列車班次、路線與票價資訊。</small>
+      </a>
+      <a class="link-item" href="https://www.jorudan.co.jp/time/to/%E6%88%90%E7%94%B0%E7%A9%BA%E6%B8%AF%EF%BC%88%E6%88%90%E7%94%B0%E7%AC%AC%EF%BC%91%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%EF%BC%89_%E9%8C%A6%E7%B3%B8%E7%94%BA/?Dym=202601&Ddd=20&r=%E7%B7%8F%E6%AD%A6%E7%B7%9A%E5%BF%AB%E9%80%9F%E3%83%BB%E6%A8%AA%E9%A0%88%E8%B3%80%E7%B7%9A" target="_blank">
+        <div>JR 總武線快速列車時刻表 (Jorudan)</div>
+        <small>查閱 JR 總武線快速從成田機場前往錦糸町方向的時刻表。</small>
+      </a>
+    </div>
+  </section>
 
   <section id="day2" class="day">
     <div class="day-header">
@@ -745,8 +747,8 @@
       </a>
     </div>
   </section>
-	
-<section id="day3" class="day">
+
+  <section id="day3" class="day">
     <div class="day-header">
       <h2>Day3｜2026/01/22（四）鎌倉 → 江之島 → 橫濱</h2>
       <p>主題：歷史文化 × 海島散策 × 港未來夜景</p> 
@@ -759,24 +761,24 @@
       <a class="btn-map" href="https://maps.app.goo.gl/hQagaHuqU8c71sBh8" target="_blank">🗺️ 川崎</a>
     </div>
 
-<div class="timeline">
-  <div class="time-label">08:30</div>
-  <div class="time-body">
-    <h3>從錦糸町出發 → 鎌倉</h3>
-    <p>交通建議（約 70～90 分鐘）：<br>
-      錦糸町站 → <strong>JR 總武線快速</strong>（直通橫須賀線）→ 鎌倉站。<br>
-      列車於東京站後直通橫須賀線，無需下車轉乘，適合攜帶行李或帶小孩的家庭旅客。
-    </p>
-    <small style="display:block; margin-top:5px;">
-      ※ 建議 09:00 後出發，可避開早晨通勤人潮，搭乘體驗更佳。
-    </small>
-<p style="margin-top: 15px; font-size: 0.9em;">
-      🚆 <a href="https://www.jorudan.co.jp/time/to/%E9%8C%A6%E7%B3%B8%E7%94%BA_%E9%80%97%E5%AD%90/?Dym=202601&Ddd=22&r=%E7%B7%8F%E6%AD%A6%E7%B7%9A%E5%BF%AB%E9%80%9F%E3%83%BB%E6%A8%AA%E9%A0%88%E8%B3%80%E7%B7%9A" target="_blank" style="text-decoration: underline; color: #555;">
-        查詢錦糸町 → 鎌倉即時列車班次 (Jorudan)
-      </a>
-    </p>
-  </div>
-</div>
+    <div class="timeline">
+      <div class="time-label">08:30</div>
+      <div class="time-body">
+        <h3>從錦糸町出發 → 鎌倉</h3>
+        <p>交通建議（約 70～90 分鐘）：<br>
+          錦糸町站 → <strong>JR 總武線快速</strong>（直通橫須賀線）→ 鎌倉站。<br>
+          列車於東京站後直通橫須賀線，無需下車轉乘，適合攜帶行李或帶小孩的家庭旅客。
+        </p>
+        <small style="display:block; margin-top:5px;">
+          ※ 建議 09:00 後出發，可避開早晨通勤人潮，搭乘體驗更佳。
+        </small>
+        <p style="margin-top: 15px; font-size: 0.9em;">
+          🚆 <a href="https://www.jorudan.co.jp/time/to/%E9%8C%A6%E7%B3%B8%E7%94%BA_%E9%80%97%E5%AD%90/?Dym=202601&Ddd=22&r=%E7%B7%8F%E6%AD%A6%E7%B7%9A%E5%BF%AB%E9%80%9F%E3%83%BB%E6%A8%AA%E9%A0%88%E8%B3%80%E7%B7%9A" target="_blank" style="text-decoration: underline; color: #555;">
+            查詢錦糸町 → 鎌倉即時列車班次 (Jorudan)
+          </a>
+        </p>
+      </div>
+    </div>
 
     <div class="timeline">
       <div class="time-label">10:00</div>
@@ -818,42 +820,42 @@
       </div>
     </div>
 
-<div class="timeline">
-  <div class="time-label">15:30</div>
-  <div class="time-body">
-    <h3>移動 → 橫濱港未來區（約 50–60 分鐘）</h3>
-    <p>從江之島前往橫濱，可依人潮與偏好選擇以下兩條路線：</p>
+    <div class="timeline">
+      <div class="time-label">15:30</div>
+      <div class="time-body">
+        <h3>移動 → 橫濱港未來區（約 50–60 分鐘）</h3>
+        <p>從江之島前往橫濱，可依人潮與偏好選擇以下兩條路線：</p>
 
-    <div style="margin-top:20px;">
-      <h4 style="margin:0 0 5px; font-size:1.05rem;">
-        推薦路線｜湘南單軌電車（較順暢）
-      </h4>
-      <p style="margin-bottom:5px;">
-        <strong>路線：</strong>湘南江之島站 →（湘南單軌電車）→ 大船站 →（JR）→ 橫濱站
-      </p>
-      <p style="font-size:0.9em; color:#666; margin:0;">
-        懸掛式單軌視野佳、搭乘體驗特殊；下午人潮通常較少。大船站為 JR 大站，往橫濱班次多。
-      </p>
+        <div style="margin-top:20px;">
+          <h4 style="margin:0 0 5px; font-size:1.05rem;">
+            推薦路線｜湘南單軌電車（較順暢）
+          </h4>
+          <p style="margin-bottom:5px;">
+            <strong>路線：</strong>湘南江之島站 →（湘南單軌電車）→ 大船站 →（JR）→ 橫濱站
+          </p>
+          <p style="font-size:0.9em; color:#666; margin:0;">
+            懸掛式單軌視野佳、搭乘體驗特殊；下午人潮通常較少。大船站為 JR 大站，往橫濱班次多。
+          </p>
+        </div>
+
+        <div style="margin:20px 0;">
+          <h4 style="margin:0 0 5px; font-size:1.05rem;">
+            經典路線｜江之電沿線風景
+          </h4>
+          <p style="margin-bottom:5px;">
+            <strong>路線：</strong>江之島站 →（江之電）→ 藤澤站 →（JR）→ 橫濱站
+          </p>
+          <p style="font-size:0.9em; color:#666; margin:0;">
+            適合想欣賞江之電沿途風景的旅客，但下午回程人潮較多。
+          </p>
+        </div>
+
+        <p style="margin-top:15px; border-top:1px dashed #eee; padding-top:12px;">
+          <strong>抵達橫濱站後：</strong><br>
+          轉乘 JR 根岸線（1 站、約 3 分鐘）至 <strong>櫻木町站</strong>，即可進入港未來區，動線銜接空中纜車與紅磚倉庫最順。
+        </p>
+      </div>
     </div>
-
-    <div style="margin:20px 0;">
-      <h4 style="margin:0 0 5px; font-size:1.05rem;">
-        經典路線｜江之電沿線風景
-      </h4>
-      <p style="margin-bottom:5px;">
-        <strong>路線：</strong>江之島站 →（江之電）→ 藤澤站 →（JR）→ 橫濱站
-      </p>
-      <p style="font-size:0.9em; color:#666; margin:0;">
-        適合想欣賞江之電沿途風景的旅客，但下午回程人潮較多。
-      </p>
-    </div>
-
-    <p style="margin-top:15px; border-top:1px dashed #eee; padding-top:12px;">
-      <strong>抵達橫濱站後：</strong><br>
-      轉乘 JR 根岸線（1 站、約 3 分鐘）至 <strong>櫻木町站</strong>，即可進入港未來區，動線銜接空中纜車與紅磚倉庫最順。
-    </p>
-  </div>
-</div>
 
     <div class="timeline">
       <div class="time-label">16:30</div>
@@ -1375,6 +1377,30 @@
     <h2>交通總覽 & 住宿地點</h2>
   </div>
 
+<div class="map-container">
+  <h3 style="margin-bottom: 10px; color: var(--accent);">東京 JR 主要近郊路線圖</h3>
+
+  <a href="https://upload.wikimedia.org/wikipedia/commons/0/0c/JRE_TokyoArea_SuburbanLines_SSL.svg" 
+     target="_blank" rel="noopener noreferrer" 
+     title="點擊查看高清大圖">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/JRE_TokyoArea_SuburbanLines_SSL.svg" 
+         alt="東京地區 JR 主要近郊路線圖"
+         style="width:100%; height:auto; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.08);">
+  </a>
+
+  <p style="font-size:0.85rem; color:var(--text-muted); margin-top:10px; line-height:1.6;">
+    此圖可快速了解 JR 總武快速線與橫須賀線的直通方向與相對位置。
+  </p>
+
+  <div style="margin-top:10px; padding:8px 10px; background:#fffbe6; border:1px solid #ffeeba; border-radius:4px; font-size:0.85rem; line-height:1.6; color:#222;">
+    <strong>📍 錦糸町怎麼找？（深藍線快速定位）</strong><br>
+    在圖右側找到<strong>深藍色「總武快速線」</strong>。<br>
+    從<strong>東京站</strong>往右（東側）數到<strong>第三站</strong>，在「總」字正下方的位置，就是你的住宿站<strong>錦糸町</strong>。
+  </div>
+</div>
+
+
+
   <div class="timeline">
     <div class="time-label">交通</div>
     <div class="time-body">
@@ -1464,4 +1490,4 @@
 })();
 </script>
 </body>
-</html>
+</html>	
